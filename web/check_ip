@@ -1,0 +1,10 @@
+#!/bin/bash
+printf "Reading ..."
+curl "http://robertos.noip.biz/"
+printf "/n waiting ..."
+sleep 20
+
+printf "Terminado."
+
+
+pstree | grep php

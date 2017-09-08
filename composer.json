@@ -1,0 +1,20 @@
+{
+    "name": "bajasoft/console",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Raul Quintero",
+            "email": "raul.quintero@live.com"
+        }
+    ],
+    "autoload": {
+	"psr-4": {
+        "App\\Config\\": "app/config/",
+        "App\\Controller\\": "app/controller/",
+	    "App\\Models\\": "app/models/",
+        "Core\\": "core/",
+	    "Libs\\Traits\\": "libs/traits/"
+        }
+    },
+	 "require": {}
+}

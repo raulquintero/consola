@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+
+#	RewriteRule ^([^/]*)$ /index.php?q=$1 [L]
+#	RewriteRule ^([^/]*)/([^/]*)$ /index.php?q=$1&fn=$2 [L]
+
+#	RewriteRule ^([^/]*)/([^/]*)/([^/]*)$ /index.php?q=$1&categoria=$2&subcategoria=$3 [L]
+#	RewriteRule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)$ /index.php?q=$1&categoria=$2&subcategoria=$3&show=$4&page=$5 [L]
+
+	RewriteRule ^(.*)$ /index.php?q=$1 [NC,L,QSA]
+</IfModule>
