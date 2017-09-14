@@ -94,6 +94,15 @@
 					<li>
 						<a href="#">Sistemas</a>
 					</li>
+					<li>
+						<a href="#">Cajero</a>
+					</li>
+					<li>
+						<a href="#">Almacen</a>
+					</li>
+					<li>
+						<a href="#">IT</a>
+					</li>
 				</ul>
 			</div>
 		
@@ -103,7 +112,7 @@
 			<div class="container-fluid">
 				<div class="page-header">
 					<div class="pull-left">
-						<h1>Privilegios</h1>
+						<h1>Privilegios Administrador</h1>
 					</div>
 					<div class="pull-right">
 						<ul class="minitiles">
@@ -119,13 +128,7 @@
 							</li>
 						</ul>
 						<ul class="stats">
-							<li class='satgreen'>
-								<i class="fa fa-money"></i>
-								<div class="details">
-									<span class="big">$324,12</span>
-									<span>Balance</span>
-								</div>
-							</li>
+							
 							<li class='lightred'>
 								<i class="fa fa-calendar"></i>
 								<div class="details">
@@ -161,7 +164,85 @@
 						<div class="box box-color box-bordered">
 							<div class="box-title">
 								<h3>
-									<i class="fa fa-edit"></i>Administrador</h3>
+									<i class="fa fa-edit"></i>Rutas</h3>
+							</div>
+							<div class="box-content">
+								<form action="#" method="POST" class='form-horizontal'>
+                                    <div class="form-group red">
+										<label for="select" class="control-label col-sm-2">Recepcion</label>
+										
+									</div><hr>
+								<?php 
+                                    foreach($response['model'] as $privilegio) {
+                                        $isChecked = ($privilegio['status']) ? "checked" : "";
+                                        ?>
+									<div class="form-group">
+										<label class="control-label col-sm-6"><?php echo ucwords($privilegio['privilegio']);?></label>
+										<div class="col-sm-3">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" name="checkbox" <?php echo $isChecked?> > <br>
+												</label>
+											</div>
+										</div>
+                                        <div class="col-sm-3">
+                                        <button class="btn btn-mini btn-warning btn--icon">
+											<i class="fa fa-edit"></i></button>
+											<button class="btn btn-mini btn-danger btn--icon">
+											<i class="fa fa-trash-o"></i></button>
+										</div>
+									</div>
+                                    <?php }?>
+								
+									<div class="form-actions">
+										<button type="submit" class="btn btn-primary">Save changes</button>
+										<button type="button" class="btn">Cancel</button>
+									</div>
+								</form>
+
+								<form action="#" method="POST" class='form-horizontal'>
+                                    <div class="form-group red">
+										<label for="select" class="control-label col-sm-2">Clientes</label>
+										
+									</div><hr>
+								<?php 
+                                    foreach($response['model'] as $privilegio) {
+                                        $isChecked = ($privilegio['status']) ? "checked" : "";
+                                        ?>
+									<div class="form-group">
+										<label class="control-label col-sm-6"><?php echo ucwords($privilegio['privilegio']);?></label>
+										<div class="col-sm-3">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" name="checkbox" <?php echo $isChecked?> > <br>
+												</label>
+											</div>
+										</div>
+                                        <div class="col-sm-3">
+                                        <button class="btn btn-mini btn-warning btn--icon">
+											<i class="fa fa-edit"></i></button>
+											<button class="btn btn-mini btn-danger btn--icon">
+											<i class="fa fa-trash-o"></i></button>
+										</div>
+									</div>
+                                    <?php }?>
+								
+									<div class="form-actions">
+										<button type="submit" class="btn btn-primary">Save changes</button>
+										<button type="button" class="btn">Cancel</button>
+									</div>
+								</form>
+
+
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="box box-color box-bordered">
+							<div class="box-title">
+								<h3>
+									<i class="fa fa-edit"></i>Menu</h3>
 							</div>
 							<div class="box-content">
 								<form action="#" method="POST" class='form-horizontal'>
@@ -171,13 +252,7 @@
 											<select name="select" id="select" class='form-control'>
 												<option value="1">Menu</option>
 												<option value="2">Formas</option>
-												<option value="3">Option-3</option>
-												<option value="4">Option-4</option>
-												<option value="5">Option-5</option>
-												<option value="6">Option-6</option>
-												<option value="7">Option-7</option>
-												<option value="8">Option-8</option>
-												<option value="9">Option-9</option>
+											
 											</select>
 										</div>
 									</div><hr>
@@ -212,7 +287,7 @@
 						</div>
 					</div>
 				</div>
-	
+				
 			
 			</div>
 		</div>

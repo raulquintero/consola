@@ -1,6 +1,5 @@
-
-
 <?php 
+$noDebug =TRUE;
 
     // $menusql= "SELECT menu from menu where menu_id=$menu_id";
     //  list($menu_name)=$database->get_row($menusql);
@@ -26,15 +25,17 @@
     color: green;
 }
 </style>
+<div class="modal-header" style="background:#2AAB2C;color:white">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel">Nuevo</h4>
+				</div>
 
-
-<?php echo "LOMF590827HDFPTR01<br>LASL470825HCLRRS08<br>masm020203mdfrnta6" ?>
+<?php echo "LOMF590827HDFPTR01 - LASL470825HCLRRS08 - masm020203mdfrnta6" ?>
 <form class="form-horizontal" action="/catalogo/<?php echo $response['variables']['person']?>/0/perfil/nuevo" method="POST">
 
 
         <div class="block-header">
-            <button data-dismiss="modal" class="close" type="button">&times;</button>
-            <h3> Agregar <?php echo ucwords ($response['variables']['type'])?> </h3>
+           
     <input type="hidden" name="fn" value="add"> 
     <input type="hidden" name="path" value="<?php echo $path?>">
         </div>
@@ -60,7 +61,6 @@
 
 
         </div>
-
     </fieldset>
 
         <div class="modal-footer">

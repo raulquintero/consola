@@ -7,25 +7,25 @@ use App\Controller\{MantenimientoController,GenericController,MenuController,For
 
 // *****************  PAGINAS *****************
 
-if   ($variables = Router::redirect('/mantenimiento/environment','get',"ma1"))     {$response = GenericController::showPage("environment",$variables);}  
-elseif   ($variables = Router::redirect('/mantenimiento/modulos','get',"ma2"))         {$response = GenericController::getData("xclientes",$variables);}  
-elseif   ($variables = Router::redirect('/mantenimiento/menu','get',"ma4"))            {$response = MantenimientoController::menu("xmenu",$variables);}  
-elseif   ($v = Router::redirect('/mantenimiento/menu/{menu_id}','get',"ma5"))  {$response = MantenimientoController::menu("xmenu",$v);}  
+if   ($variables = Router::request('/mantenimiento/environment','get',"ma1"))     {$response = GenericController::showPage("environment",$variables);}  
+elseif   ($variables = Router::request('/mantenimiento/modulos','get',"ma2"))         {$response = GenericController::getData("xclientes",$variables);}  
+elseif   ($variables = Router::request('/mantenimiento/menu','get',"ma4"))            {$response = MantenimientoController::menu("xmenu",$variables);}  
+elseif   ($v = Router::request('/mantenimiento/menu/{menu_id}','get',"ma5"))  {$response = MantenimientoController::menu("xmenu",$v);}  
 
 
 
 
 //******************  FORMAS  *******************
 
-elseif  ($variables = Router::redirect('/forma/agregarmenu/{menu_id}','get',"ma6"))  {$response = FormaController::showForma("formas/addcategory.form",$variables);}  
-elseif  ($v = Router::redirect('/forma/editarmenu/{menu_id}','get',"ma7"))   {$response =($v['security']) ? FormaController::showForma("formas/editcategory.form",$v):array('security'=>FALSE)  ;}  
+elseif  ($variables = Router::request('/forma/agregarmenu/{menu_id}','get',"ma6"))  {$response = FormaController::showForma("formas/addcategory.form",$variables);}  
+elseif  ($v = Router::request('/forma/editarmenu/{menu_id}','get',"ma7"))   {$response =($v['security']) ? FormaController::showForma("formas/editcategory.form",$v):array('security'=>FALSE)  ;}  
 
 
-elseif  ($variables = Router::redirect('/mantenimiento/actualizarmenu/{menu_id}','get',"ma8"))  {$response = MenuController::update("xmenu",$variables,$Menu);}  
-elseif  ($variables = Router::redirect('/mantenimiento/agregarmenu','get',"ma9"))               {$response = MenuController::add("xmenu",$variables,$Menu);}  
-elseif  ($variables = Router::redirect('/mantenimiento/borrarmenu/{menu_id}/{parent_id}','get',"ma10"))               {$response = MenuController::delete("xmenu",$variables,$Menu);}  
-elseif  ($variables = Router::redirect('/mantenimiento/restaurarmenu/{menu_id}/{parent_id}','get',"ma11"))               {$response = MenuController::restore("xmenu",$variables,$Menu);}  
-elseif  ($variables = Router::redirect('/mantenimiento/removermenu/{menu_id}/{parent_id}','get',"ma12"))               {$response = MenuController::remove("xmenu",$variables,$Menu);}  
+elseif  ($variables = Router::request('/mantenimiento/actualizarmenu/{menu_id}','get',"ma8"))  {$response = MenuController::update("xmenu",$variables,$Menu);}  
+elseif  ($variables = Router::request('/mantenimiento/agregarmenu','get',"ma9"))               {$response = MenuController::add("xmenu",$variables,$Menu);}  
+elseif  ($variables = Router::request('/mantenimiento/borrarmenu/{menu_id}/{parent_id}','get',"ma10"))               {$response = MenuController::delete("xmenu",$variables,$Menu);}  
+elseif  ($variables = Router::request('/mantenimiento/restaurarmenu/{menu_id}/{parent_id}','get',"ma11"))               {$response = MenuController::restore("xmenu",$variables,$Menu);}  
+elseif  ($variables = Router::request('/mantenimiento/removermenu/{menu_id}/{parent_id}','get',"ma12"))               {$response = MenuController::remove("xmenu",$variables,$Menu);}  
 
 
 

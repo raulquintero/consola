@@ -29,8 +29,7 @@ echo "
 </script>";
 
 
-
-if ($response['page']<>"loginEmail" && $response['page']<>"loginPassword" && $response['page']<>'bloqueado' AND $noDebug) {
+if ($response['page']<>"loginEmail" && $response['page']<>"loginPassword" && $response['page']<>'bloqueado' AND !$noDebug) {
 
 
 echo "<pre>";

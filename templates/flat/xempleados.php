@@ -373,7 +373,7 @@
                                     $empleado_nombre = $empleado['apellidop'] . " " . $empleado['apellidom'] . " " . $empleado['nombre'];
                                     echo "<tr>"
                                     . "<td>" . $empleado['empleado_id'] . "</td>"
-                                    . "<td><a href='#' onclick=\"gotoURL('/catalogo/empleados/" . $empleado['empleado_id'] . "/perfil')\">" . ucwords($empleado_nombre) . "</a></td>"
+                                    . "<td><a href='#' onclick=\"gotoURL('/catalogo/empleado/" . $empleado['empleado_id'] . "/perfil')\">" . ucwords($empleado_nombre) . "</a></td>"
                                     . "<td>" . ucwords($empleado['puesto']) . "</td>"
                                     . "<td><i class=\"fa fa-check\" aria-hidden=\"true\" style=\"color:green\"></i>" . ucwords($empleado['sucursal']) . "</td>"
                                     . "<td class='hidden-480 sorting_1 hidden-print'>

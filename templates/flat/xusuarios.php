@@ -323,10 +323,14 @@
     
     
     
-    
-    
-    
-    
+<?php    
+if ($response['models']['error'])
+echo "<br>
+	<div class=\"alert alert-danger alert-dismissable\">
+			<button type=\"button\" class=\"close\" data-dismiss=\"alert\">×</button>
+			<strong>Aviso!</strong> ". $response['models']['error'].". 
+	</div>";
+?>    
 <div class="row">
 	<div class="col-sm-12">
 		<div class="box box-color box-bordered red">
@@ -340,6 +344,7 @@
                                 </a> -->
 		<!-- <a href="agregar_cliente" class="pull-right btn btn-blue">+ Cliente Nuevo</a> -->
 			</div>
+
 
 
                     <div class="box-content nopadding">
@@ -377,10 +382,10 @@
                                     . "<td>" . $cliente['email'] . "</td>"
                                     . "<td>" . $cliente['puesto'] . "</td>"
                                     . "<td class='hidden-480 hidden-print sorting_1'>
-                                        <a href='/configuracion/usuario/" .$cliente['usuario_id'] . "/perfil' class='btn' rel='tooltip' title='' data-original-title='View'>
+                                        <a href='/catalogo/usuario/" .$cliente['usuario_id'] . "/perfil' class='btn' rel='tooltip' title='' data-original-title='View'>
                                                 <i class='fa fa-search'></i>
                                         </a>
-                                        <a href='/configuracion/usuario/" .$cliente['usuario_id'] . "/perfil/editar' class='btn' rel='tooltip' title='' data-original-title='Edit'>
+                                        <a href='/catalogo/usuario/" .$cliente['usuario_id'] . "/perfil/editar' class='btn' rel='tooltip' title='' data-original-title='Edit'>
                                                 <i class='fa fa-edit'></i>
                                         </a>
                                         

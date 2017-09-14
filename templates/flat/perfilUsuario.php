@@ -362,8 +362,7 @@
                             </a>
                         </div>
                     </div>
-                        <?php echo $response['error'];
-                         ?>
+                        <?php echo $response['error'];?>
 
                     <div class="row">
                         <div class="col-sm-12">
@@ -414,7 +413,7 @@
                                     </ul>
                                     <div class="tab-content padding tab-content-inline tab-content-bottom">
                                         <div class="tab-pane active" id="profile">
-                                           <form id="formulario" action="/catalogo/solicitudempleo/<?=$response['model']['solicitudempleo_id']?>/perfil/updatepersonal"  class="form-horizontal form-validate" method="POST">
+                                           <form id="formulario" action="/catalogo/usuario/<?=$response['model']['usuario_id']?>/perfil/updatepersonal"  class="form-horizontal form-validate" method="POST">
 
                                                 <div class="row">
                                                     <div class="col-sm-2">
@@ -512,7 +511,7 @@
                                                        
                                                      <?php   
                                                         if (!isset($response['readonly']))
-                                                        echo '
+                                                        echo $response['readonly'].'
                                                             
                                                             <div class="form-actions">
                                                             <input type="submit" class="btn btn-primary" value="Guardar">

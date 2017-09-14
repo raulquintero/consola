@@ -44,8 +44,8 @@
 	<script src="/assets/flat/js/demonstration.min.js"></script>
 
 		<!-- New DataTables -->
-	<script src="/assets/flat/js/plugins/moment/js/jquery.moment.min.js"></script>
-	<script src="/assets/flat/js/plugins/moment/js/moment-range.min.js"></script>
+	<script src="/assets/flat/js/plugins/momentjs/jquery.moment.min.js"></script>
+	<script src="/assets/flat/js/plugins/momentjs/moment-range.min.js"></script>
 	<script src="/assets/flat/js/plugins/datatables/jquery.dataTables.min.js"></script>
 	<script src="/assets/flat/js/plugins/datatables/extensions/dataTables.tableTools.min.js"></script>
 	<script src="/assets/flat/js/plugins/datatables/extensions/dataTables.fixedColumns.min.js"></script>
@@ -75,8 +75,11 @@
 	<!-- Notify -->
 	<script src="/assets/flat/js/plugins/gritter/jquery.gritter.min.js"></script>
 	
-
+	<script src="/assets/js/ajax.js"></script>
+    <script src="/assets/js/curp.js"></script>
 	<script src="/assets/js/local.js"></script>
+	<script src="/assets/js/pos.js"></script>
+
 
 <script type="text/javascript">
 titulo="<?php echo $_SESSION['titulo'] ?>";
@@ -92,13 +95,19 @@ texto="<?php echo $_SESSION['texto'] ?>";
 <script type=text/javascript>
 		function setFocusTo(campo){
 			 $(campo).focus();
-			//document.getElementById("user_pass").focus();
+			document.getElementById("codebar").focus();
 		}
+		$(document).keypress(function(e){
+//    if(e.charCode == 113){//f2
+      alert(e.charCode);
+      return false;
+//   }
+ })
 </script>
 
 </head>
 <!-- onloade="setFocusTo('<?php echo $focusto ?>');<?php echo $function ?>" -->
-<body data-layout="<?php echo $layout ?>" class="<?php echo $theme ?>"   style="background: #555">
+<body data-layout="<?php echo $layout ?>" class="<?php echo $theme ?>"   style="background: #555" onload="setFocusTo('codebar');" >
 
 		
 <?php include DIR_TEMPLATES.'navigation.php';?>
@@ -114,7 +123,7 @@ texto="<?php echo $_SESSION['texto'] ?>";
 	<div class="col-sm-9" ><br>
 		<div class="box box-colore box-borderede" >
 			
-			<div class="box-content nopadding listproductos" style="background:#e2e2e2;overflow-y:scroll;">
+			<div id="detalleTicket" class="box-content nopadding listproductos" style="background:#e2e2e2;overflow-y:scroll;">
 				<table class="table table-hover table-striped table-nomargin table-borderedeee " >
 					<thead>
 					<tr>
@@ -205,15 +214,15 @@ texto="<?php echo $_SESSION['texto'] ?>";
 					</tr>
 					<!-- <tr>
 						<td class="titulo_dinero">Efectivo</td>
-						<td class="dinero"><b><?php echo dinero($_SESSION['efectivo']); ?><b></td>
+						<td class="dinero"><b><?php echo $_SESSION['efectivo']; ?><b></td>
 					</tr>
 					<tr>
 						<td class="titulo_dinero">Tarjeta</td>
-						<td class="dinero"><b><?php echo dinero($_SESSION['tarjeta']); ?><b></td>
+						<td class="dinero"><b><?php echo $_SESSION['tarjeta']; ?><b></td>
 					</tr>
 					<tr>
 						<td class="titulo_dinero">Resta</td>
-						<td class="dinero"><h4><b>MX$<?php echo dinero($Cart->cartTotal()); ?><b></h4></td>
+						<td class="dinero"><h4><b>MX$<?php //echo $Cart->cartTotal(); ?><b></h4></td>
 					</tr> -->
 					</tbody>
 				</table>
@@ -286,7 +295,7 @@ texto="<?php echo $_SESSION['texto'] ?>";
             <div class='hidden-xs'>
             	<!-- <button class='btn btn-green'>hola</button> -->
             <ul class='main-nav2'>
-                <li class='active' ><a href="index.html"><span>F2 POS</span></a></li>
+                <li class='active' ><a href="#" onclick="showData('detalleTicket','detalleTicket')"><span>F2 POS</span></a></li>
                 <li class='active' ><a href="/#modal-client" data-toggle="modal"  onkeyup="setFocusTo('#cambio')"><span>F4 Clientes</span></a></li>
                 <li class='active' ><a href="/#modal-user" data-toggle="modal"  onkeyup="setFocusTo('#cambio')"><span>F7 Borrar Producto</span></a></li>
                 <li class='active' ><a href="index.html"><span>F8 Checar Precio</span></a></li>

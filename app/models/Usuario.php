@@ -15,7 +15,9 @@ class Usuario {
 		static $result = [];
 		try {
 
-			$stm = $this->pdo->prepare('select * from usuario,person,puesto where usuario.person_id=person.person_id   AND usuario.puesto_id=puesto.puesto_id ');
+			$stm = $this->pdo->prepare('select usuario_id,nombre,apellidop,apellidom,email,puesto from usuario
+				left join person on usuario.person_id=person.person_id 
+				left join puesto on usuario.puesto_id=puesto.puesto_id ');
 			$stm->execute();
 
 			$result = $stm->fetchAll();
@@ -25,7 +27,7 @@ class Usuario {
             
 		} catch(Exception $e){
 
-			 $result['error'] = $e->getMessage();
+			 $result['error'] = "Usuario::getUsuarios -". $e->getMessage();
 			};
 
 		return $result;
@@ -36,8 +38,10 @@ public function getPerfil($id) : array{
 
 		try {
 
-			$stm = $this->pdo->prepare('select * from usuario,person,puesto where usuario.person_id=person.person_id 
-				and usuario_id= ? AND usuario.puesto_id=puesto.puesto_id ');
+			$stm = $this->pdo->prepare('select * from usuario 
+				left join person on usuario.person_id=person.person_id
+				left join puesto on usuario.puesto_id=puesto.puesto_id
+				where usuario_id= ? ');
 			$stm->execute([$id]);
 
 			$result = $stm->fetchAll();
@@ -45,7 +49,7 @@ public function getPerfil($id) : array{
 
 		} catch(Exception $e){
 
-			 $result['error'] = $e->getMessage();
+			 $result['error'] = "Usuario::getPerfil -". $e->getMessage();
 			};
 		return $result;
 	}
@@ -60,7 +64,7 @@ public function getLogin($email) : array{
 			
 		} catch(Exception $e){
 			
-			$result['error'] = $e->getMessage();
+			$result['error'] = "Usuario::getLogin -". $e->getMessage();
 		};
 
 		// $stm->debugDumpParams();echo "<br><br>";
@@ -106,11 +110,10 @@ echo "<br> ID: ".$person_id;
 		} catch(Exception $e){
 
 			$this->pdo->rollBack();
-			 echo $result['error'] = $e->getMessage();
+			 echo $result['error'] = "Usuario::createUser -".$e->getMessage();
 			};
 
 
-			echo "<br>return<br>";
 		return $usuario_id;
 	}
 

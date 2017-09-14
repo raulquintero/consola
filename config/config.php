@@ -19,7 +19,7 @@ session_start();
 $empresa="Cibercomm";
 $iva=16;
 $layout_topbar=" data-layout-topbar='fixed'";
-
+$noDebug= FALSE;
 $isLocked = FALSE;
 
 require_once DIR_BASE.'/locales/es_MX/locale.php' ;

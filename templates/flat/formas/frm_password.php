@@ -1,3 +1,4 @@
+<?php $noDebug =TRUE;?>
 <h2><?php echo  ucwords($response['nombre']);?></h2>
 	<form method='POST' class='form-validate' id="test"  action="/login/<?php echo $response['key']?>">
         <div class="form-group">

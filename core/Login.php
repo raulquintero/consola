@@ -33,22 +33,23 @@ class Login {
 
     public function authenticate($key,$password) {
 		static $result = [];
-        $person_id = $this->getUsername($key);
+		$person_id = $this->getUsername($key);
         //echo $key;
 		try {
-			$stm = $this->pdo->prepare("SELECT activo,homepage FROM usuario WHERE password = ? AND person_id= ?   ");
+			$stm = $this->pdo->prepare("SELECT activo,homepage,locale FROM usuario WHERE password = ? AND person_id= ?   ");
             //echo "<br>".$stm->queryString;
             //  echo "<br>".$person_id;
             //   echo "<br>".$password;
             // echo "<br";
 			$stm->execute([$password,$person_id]);
-			$result = $stm->fetchAll();
-           $result = json_decode(json_encode($result), True); 
-           $result['activo']=$result[0]['activo'];
-           $result['homepage']=$result[0]['homepage'];
+			$results = $stm->fetchAll();
+           $results = json_decode(json_encode($results), True); 
+           $result['activo']=$results[0]['activo'];
+           $result['homepage']=$results[0]['homepage'];
            unset($result[0]);    
            $result['person_id']=$person_id;
-           $result['password']=$password;
+		   $result['password']=$password;
+		   $result['locale']=$results[0]['locale'];
         //     echo "resultado: ";
             // var_dump($result);
             

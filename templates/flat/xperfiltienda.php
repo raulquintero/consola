@@ -59,6 +59,8 @@
         <!-- Just for demonstration -->
         <script src="/js/demonstration.min.js"></script>
 
+        <script src="/assets/js/ajax.js"></script>
+        <script src="/assets/js/curp.js"></script>
         <!--[if lte IE 9]>
                 <script src="/js/plugins/placeholder/jquery.placeholder.min.js"></script>
                 <script>

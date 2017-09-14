@@ -72,8 +72,9 @@ class EmpleadoController {
 
 		switch ($variables['opcion']) {
 			case 'nuevo':  $models = $model->crearEmpleado($variables,$variables['tabla']); $readonly=NULL;  break;
-			case 'editar': $readonly=NULL; $form_action="/catalogo/empleados/".intval($models['model']['empleado_id'])."/perfil/update"; break;
-			case 'update': $models= self::$model->updateTableByPerson($variables['id'],$variables['tabla']); if (!$models['error']) header("location: /catalogo/empleados/".$variables['id']."/perfil");
+			case 'editar': $readonly=NULL; $form_action="/catalogo/empleado/".intval($models['model']['empleado_id'])."/perfil/update"; break;
+			case 'update': $models= self::$model->updateTableByPerson($variables['id'],$variables['tabla']); if (!$models['error']) 
+							header("location: /catalogo/empleado/".$variables['id']."/perfil");
 
 				break;
 			
@@ -98,6 +99,7 @@ class EmpleadoController {
 		self::$settings['page_subtitle'] 	= EMPLOYEE.": ".$models['model']['empleado_id'];
 		self::$settings['page_parent'] 		= "empleados";
 		self::$settings['page_parent_url'] 	= "/catalogo/empleados";
+		self::$settings['url_base'] 	= "/catalogo/empleado";
 
 		// informacion del modelo);
 		self::$settings['model'] 		= $models['model'];

@@ -113,15 +113,15 @@
 					</tr>
 					<!-- <tr>
 						<td class="titulo_dinero">Efectivo</td>
-						<td class="dinero"><b><?php echo dinero($_SESSION['efectivo']); ?><b></td>
+						<td class="dinero"><b><?php echo $_SESSION['efectivo']; ?><b></td>
 					</tr>
 					<tr>
 						<td class="titulo_dinero">Tarjeta</td>
-						<td class="dinero"><b><?php echo dinero($_SESSION['tarjeta']); ?><b></td>
+						<td class="dinero"><b><?php echo $_SESSION['tarjeta']; ?><b></td>
 					</tr>
 					<tr>
 						<td class="titulo_dinero">Resta</td>
-						<td class="dinero"><h4><b>MX$<?php echo dinero($Cart->cartTotal()); ?><b></h4></td>
+						<td class="dinero"><h4><b>MX$<?php //echo $Cart->cartTotal(); ?><b></h4></td>
 					</tr> -->
 					</tbody>
 				</table>

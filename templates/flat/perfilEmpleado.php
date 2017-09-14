@@ -391,9 +391,9 @@ $empleado_nombre= strtoupper($response['model']['nombre'].' '.$response['model']
                                         <button data-toggle="dropdown" class="btn dropdown-toggle">Mas Opciones <span class="caret"></span></button>
                                         <ul class="dropdown-menu">
                                              <?php if ($response['model']['empleado_id']) {?>
-                                            <li><a href="<?php echo $response['page_parent_url'] ?>/<?=$response['model']['empleado_id']?>/perfil/editar" data-toggle="modal" >Editar</a></li>
+                                            <li><a href="<?php echo $response['url_base'] ?>/<?=$response['model']['empleado_id']?>/perfil/editar" data-toggle="modal" >Editar</a></li>
                                         <?php } else { ?>
-                                            <li><a href="<?php echo $response['page_parent_url'] ?>/<?=$response['model']['person_id']?>/perfil/crear" data-toggle="modal" onclick='showModal("addcurp","empleado")'>Crear Empleado</a></li>
+                                            <li><a href="<?php echo $response['url_base'] ?>/<?=$response['model']['person_id']?>/perfil/crear" data-toggle="modal" onclick='showModal("addcurp","empleado")'>Crear Empleado</a></li>
                                             <?php } ?>
                                             <li><a href="#">Print</a></li>
                                         </ul>
@@ -431,7 +431,7 @@ $empleado_nombre= strtoupper($response['model']['nombre'].' '.$response['model']
                                                 <div class="row">
                                                     <div class="col-sm-2">
                                                             <div class=" thumbnail" data-trigger="fileinput" style="width: 84px; height: 84px;">
-                                                                <img src="/assets/flat/img/demo/user-2.jpg" alt="">
+                                                                <img src="/assets/flat/img/nophoto.png" alt="">
                                                             </div>
                                                             <?php 
                                                                 if ($response['readonly']) {$style_white="style=\"border-left:white;border-top:white;border-right:white;background:white;font-weight:bold\"";}
@@ -565,7 +565,7 @@ $empleado_nombre= strtoupper($response['model']['nombre'].' '.$response['model']
                                                 <div class="row">
                                                     <div class="col-sm-2">
                                                             <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 84px; height: 84px;">
-                                                                <img src="/assets/flat/img/demo/user-1.jpg" alt="">
+                                                                <img src="/assets/flat/img/nophoto.png" alt="">
                                                             </div>
                                                             Solicitudes<br>
                                                             <?php 

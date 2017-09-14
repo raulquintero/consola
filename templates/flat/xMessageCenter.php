@@ -66,7 +66,7 @@
 </head>
 
 
-<body data-layout="<?php echo $layout?>" class="<?php echo $theme ?>" onload="<?php echo $_SESSION['showMessage'] ?>">
+<body data-layout="<?php echo $layout?>" <?php echo $layout_topbar ?> class="<?php echo $theme ?>" onload="<?php echo $_SESSION['showMessage'] ?>">
 
 	<?php include DIR_TEMPLATES.'navigation.php';?>	<div id="navigation">
 		

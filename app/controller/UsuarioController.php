@@ -32,9 +32,16 @@ class UsuarioController {
 
     public static function showPerfil($page,$variables): array{
 
-			if (strcmp($variables['vista'],"editar"))
-					{$modo="edit";$readonly="readonly";}
-					else {$modo="view";$readonly="";}
+			switch ($variables['vista']) {
+				case 'editar': $modo="edit";unset($readonly); break;
+				
+				default:$modo="view";$readonly="readonly";break;
+			}
+
+
+			// if (strcmp($variables['vista'],"editar"))
+			// 		{$modo="edit";$readonly="readonly";}
+			// 		else {$modo="view";$readonly="";}
 
 			self::$settings=[
 			'page'=>$page,

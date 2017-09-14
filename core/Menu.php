@@ -43,6 +43,10 @@ use Crypto64;
 public function listCategory($parent_id,$level=0,$check_ruta,$ul=0) {
 	//$level=0;
 //    echo "<ul class=\"main-nav\">\n";
+
+   
+
+
      $rutas = array();
     $query = "SELECT menu, menu_id , parent_id, path_option,parametros,privilegio_id FROM menu  WHERE  parent_id='$parent_id' AND deleted=FALSE ORDER BY  position ASC";
     // $res = mysql_query($query) or die($query);

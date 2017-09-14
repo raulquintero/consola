@@ -7,7 +7,7 @@ use Libs\Traits\Crypto64;
 
 //*********************Clase que procesa los uri y los separa en rutas y variables
 // uso: 
-//		if 	($variables = Router::redirect('/inicio/{day}/espanol/{nota}','[get|post]','[public|private]'))		{$response = HomeController::home("xusuarios",$variables);}
+//		if 	($variables = Router::request('/inicio/{day}/espanol/{nota}','[get|post]','[public|private]'))		{$response = HomeController::home("xusuarios",$variables);}
 
 
 class Router{
@@ -15,7 +15,7 @@ class Router{
 	private static $q;
 
 
-	public static function redirect($route,$method,$security = "public") {
+	public static function request($route,$method,$security = "public") {
 		$palabra = NULL;
 		$flag = TRUE;
 		$variables_temp = NULL;
