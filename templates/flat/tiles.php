@@ -275,13 +275,7 @@
 							</li>
 						</ul>
 						<ul class="stats">
-							<li class='satgreen'>
-								<i class="fa fa-money"></i>
-								<div class="details">
-									<span class="big">$324,12</span>
-									<span>Balance</span>
-								</div>
-							</li>
+							
 							<li class='lightred'>
 								<i class="fa fa-calendar"></i>
 								<div class="details">

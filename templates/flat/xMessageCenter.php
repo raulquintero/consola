@@ -89,7 +89,7 @@
 			<div class="container-fluid">
 				<div class="page-header">
 					<div class="pull-left">
-						<h1>Pedidos en Linea</h1>
+						<h1>Centro de Mensajes</h1>
 					</div>
 					<div class="pull-right">
 						<ul class="minitiles">
@@ -149,7 +149,7 @@
 							<div class="box-title">
 								<h3>
 									<i class="fa fa-envelope"></i>
-									Pedidos
+									raulquintero13@cibercomm.com (este correo no es para uso personal)
 								</h3>
 							</div>
 							<div class="box-content nopadding">

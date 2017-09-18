@@ -34,9 +34,10 @@ class Login {
     public function authenticate($key,$password) {
 		static $result = [];
 		$person_id = $this->getUsername($key);
-        //echo $key;
+		//echo $key;
+		// echo $password;
 		try {
-			$stm = $this->pdo->prepare("SELECT activo,homepage,locale FROM usuario WHERE password = ? AND person_id= ?   ");
+			$stm = $this->pdo->prepare("SELECT activo,homepage,locale,activo FROM usuario left join locale on usuario.locale_id=locale.locale_id WHERE password = ? AND person_id= ?   ");
             //echo "<br>".$stm->queryString;
             //  echo "<br>".$person_id;
             //   echo "<br>".$password;
@@ -47,8 +48,8 @@ class Login {
            $result['activo']=$results[0]['activo'];
            $result['homepage']=$results[0]['homepage'];
            unset($result[0]);    
-           $result['person_id']=$person_id;
-		   $result['password']=$password;
+        //    $result['person_id']=$person_id;
+		//    $result['password']=$password;
 		   $result['locale']=$results[0]['locale'];
         //     echo "resultado: ";
             // var_dump($result);

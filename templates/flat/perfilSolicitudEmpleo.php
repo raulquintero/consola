@@ -313,7 +313,7 @@
             </div>
 <?php 
 $solicitudempleo_num= $response['model']['solicitudempleo_id'];
-$solicitudempleo_nombre= strtoupper($response['model']['nombre'].' '.$response['model']['apellidop'].' '.$response['model']['apellidom']);
+$solicitudempleo_nombre= ($response['model']['nombre'].' '.$response['model']['apellidop'].' '.$response['model']['apellidom']);
 
 ?>
             <div id="main">
@@ -364,7 +364,7 @@ $solicitudempleo_nombre= strtoupper($response['model']['nombre'].' '.$response['
                                 <i class="fa fa-angle-right"></i>
                             </li>
                             <li>
-                                <a class='active'><?php echo ucwords($response['model']['nombre'].' '.$response['model']['apellidop'].' '.$response['model']['apellidom']) ?></a>
+                                <a class='active'><?php echo ucwords($solicitudempleo_nombre) ?></a>
                             </li>
 
                         </ul>
@@ -399,7 +399,7 @@ $solicitudempleo_nombre= strtoupper($response['model']['nombre'].' '.$response['
                                 <div class="box-title">
                                     <h3>
                                         <i class="fa fa-user"></i>
-                                        <?php echo $solicitudempleo_nombre?>
+                                        <?php echo strtoupper($solicitudempleo_nombre)." - ".$response['model']['created_at']?>
 
                                     </h3>
                                     <div class="btn-group pull-right">

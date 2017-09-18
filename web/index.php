@@ -35,6 +35,8 @@ if ($response['page']<>"loginEmail" && $response['page']<>"loginPassword" && $re
 echo "<pre>";
 echo "<b>cookie</b><br>";
 var_dump($_COOKIE);
+echo "<b>session</b><br>";
+var_dump($_SESSION);
 echo "<b>post</b><br>";
 var_dump($_POST);
 echo "<b>get</b><br>";

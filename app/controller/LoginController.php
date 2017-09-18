@@ -93,12 +93,14 @@ class LoginController {
 		// echo "<br>";
 		// var_dump($variables);
 		//  echo $variables['key'] ."<br>";
+		echo "<br>";var_dump($result);
 		switch  ($result['activo']) {
 			case NULL :echo "contrasena incorrecta";break;
 			case '0' :echo "desactivado";	break;
 			case '1' : //es verdad;
 				$key = Crypto64::encode($result['person_id']."-".md5($password)."-".$_COOKIE['PHPSESSID'], time() + (86400 / 2)); 
 				setcookie('key',$key);
+				$_SESSION['ui'] = $result;
 				$location = $result['homepage'];
 				// echo "<br>cookies: ";print_r($_COOKIE);
 				break;
@@ -106,9 +108,11 @@ class LoginController {
 			
 			
 		} 
-		if ($location)
-		header ("location: ".$location);
 
+		// var_dump($result);exit;
+		if ($location){
+			header ("location: ".$location);
+		}
 		setcookie('key', $variables['key'], time() + (86400 * 1), "/"); // 86400 = 1 day
         
 		
