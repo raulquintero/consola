@@ -14,6 +14,9 @@ use App\Controller\{AdministracionController,GenericController,FormaController};
 if 	($v = Router::request('/administracion/dashboard','get','ro3'))		{$response = ($v['security']) ? GenericController::showPage("xdashboard",$v):array('security'=>FALSE);} 
 if   ($v = Router::request('/administracion/contratos','get',"ad2"))               {$response = ($v['security']) ? AdministracionController::showContratos("xcontratos",$v):array('security'=>FALSE);}  
 
+if   ($v = Router::request('/administracion/catalogos/categorias','get',"ad2"))               {$response = ($v['security']) ? AdministracionController::showCategorias("xcategorias",$v):array('security'=>FALSE);}  
+if   ($v = Router::request('/administracion/catalogos/productos','get',"ad2"))               {$response = ($v['security']) ? AdministracionController::showContratos("xcontratos",$v):array('security'=>FALSE);}  
+
 
 
 // //******************  FORMAS  *******************

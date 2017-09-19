@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Models\Administracion;
+use App\Models\Producto;
 use Libs\Traits\Data;
 
 class AdministracionController {
@@ -32,4 +33,26 @@ class AdministracionController {
     return self::$settings;
 
     }
+
+    public function showCategorias($page,$variables){
+        
+        self::$model = new Producto;
+        $models = self::$model->getCategorias(intval($variables['id']));
+        // var_dump($models);exit;
+        $pagina ['titulo'] = "categoria de Productos";
+        $pagina ['subtitulo'] = "Categorias de Productos";
+        $pagina ['tbltitulo'] = "categorias";
+        self::$settings['page']=$page;
+        self::$settings['pagina'] = $pagina;
+        self::$settings['sidebar']=FALSE;
+        self::$settings['language']='es_ES';
+        self::$settings['scrolling'] = "TRUE"; 
+        self::$settings['layout'] = 'no-fixed';
+
+        self::$settings['variables'] = $variables;
+        self::$settings['models'] = $models;
+    return self::$settings;
+
+    }
+
 }

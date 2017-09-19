@@ -54,6 +54,7 @@ require_once DIR_BASE.'/router/catalogo.php';
 require_once DIR_BASE.'/router/mantenimiento.php';
 require_once DIR_BASE.'/router/pos.php';
 require_once DIR_BASE.'/router/blog.php';
+require_once DIR_BASE.'/router/productos.php';
 
 
 
