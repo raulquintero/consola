@@ -49,7 +49,7 @@ var_dump($response);
 
 var_dump(DIR_TEMPLATES.$response['page'].'.php');
 echo "<br><b>v: </b>";
-var_dump($response['nombre']);
+// var_dump($response['nombre']);
 
 echo "</pre>";
 

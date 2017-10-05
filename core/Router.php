@@ -31,7 +31,7 @@ class Router{
 			
 		};
 
-
+		if (isset($_cookie['isLocked']))
 		if ( strcmp($request,"/unlock")<>0 && $_COOKIE['isLocked']==TRUE)
 			$request="/locked";
 
@@ -84,7 +84,8 @@ class Router{
 			$cuantos =($peticion);
 			$contador=-1;
 			foreach ($peticion as $campo){
-				//  echo "<br>campos ::: a comparar ::>$campo - ".$arreglo[$contador+1]."<br>"; 	
+				//  echo "<br>campos ::: a comparar ::>$campo - ".$arreglo[$contador+1]."<br>"; 
+				if(isset($campo[0])) // {echo "hola";var_dump($campo[0]); exit;}
 				if (strcmp($campo,$arreglo[$contador+1])<>0 && $campo[0]<>"{"){
 					$flag=FALSE;
 				}
@@ -94,7 +95,7 @@ class Router{
 //  exit;
 			$contador=0;
 			foreach ($peticion as $campo){
-
+				if(isset($campo[0])) // {echo "hola";var_dump($campo[0]); exit;}
 				if ($campo[0]=="{"){
 					//echo "<br>campo ($contador): ".$campo;
 					$nombre_variable=preg_replace("@([^a-zA-Z0-9\+\-\_\*\@\$\!\;\.\?\#\:\=\%\/\ ]+)@Ui", "", $campo);

@@ -36,12 +36,17 @@ class ProductoController {
 	public static function showProductos($page,$variables): array{
 
 
+        $pagina ['titulo'] = "productos";
+        $pagina ['subtitulo'] = "productos";
+        $pagina ['tbltitulo'] = "listado de productos";
+        self::$settings['page']=$page;
+        self::$settings['sidebar']=FALSE;
+        self::$settings['language']='es_ES';
+        self::$settings['scrolling' ]= "TRUE"; 
+        self::$settings['layout' ]= 'no-fixed';
 
-			self::$settings['page']=$page;
-			self::$settings['sidebar']=TRUE;
-			self::$settings['language']='es_ES';
-			self::$settings['scrolling' ]= "TRUE"; 
-			self::$settings['layout' ]= 'no-fixed';
+        self::$settings['pagina']=$pagina;
+        
 
 	return self::$settings;
 	}

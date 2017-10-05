@@ -96,7 +96,7 @@ public function listCategory($parent_id,$level=0,$check_ruta,$ul=0) {
                     echo "<li class='divider'></li>";
                 else
                     
-                        echo "<li $disbled><a tabindex=\"-1\" href=\"".$sub['path_option']."\" ".Crypto64::decode($sub['parametros'])." ><b>".ucwords($sub['menu'])."</b> </a></li>";
+                        echo "<li disabled><a tabindex=\"-1\" href=\"".$sub['path_option']."\" ".Crypto64::decode($sub['parametros'])." ><b>".ucwords($sub['menu'])."</b> </a></li>";
              $rutas []= array($sub['path_option'],$sub['menu_id']);
                         
             }

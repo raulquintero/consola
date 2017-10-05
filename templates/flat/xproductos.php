@@ -9,57 +9,57 @@
 	<!-- Apple devices fullscreen -->
 	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-	<title><?php echo $empresa ?> - Productos</title>
+	<title><?php echo ucwords($response['pagina']['titulo'])?></title>
 
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/flat/css/bootstrap.min.css">
 	<!-- jQuery UI -->
-	<link rel="stylesheet" href="/css/plugins/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="/assets/flat/css/plugins/jquery-ui/jquery-ui.min.css">
 	<!-- dataTables -->
-	<link rel="stylesheet" href="/css/plugins/datatable/TableTools.css">
+	<link rel="stylesheet" href="/assets/flat/css/plugins/datatable/TableTools.css">
 	<!-- chosen -->
-	<link rel="stylesheet" href="/css/plugins/chosen/chosen.css">
+	<link rel="stylesheet" href="/assets/flat/css/plugins/chosen/chosen.css">
 	<!-- Theme CSS -->
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/assets/flat/css/style.css">
 	<!-- Color CSS -->
-	<link rel="stylesheet" href="/css/themes.css">
+	<link rel="stylesheet" href="/assets/flat/css/themes.css">
 
 	<!-- jQuery -->
-	<script src="/js/jquery.min.js"></script>
+	<script src="/assets/flat/js/jquery.min.js"></script>
 
 	<!-- Nice Scroll -->
-	<script src="/js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+	<script src="/assets/flat/js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
 	<!-- imagesLoaded -->
-	<script src="/js/plugins/imagesLoaded/jquery.imagesloaded.min.js"></script>
+	<script src="/assets/flat/js/plugins/imagesLoaded/jquery.imagesloaded.min.js"></script>
 	<!-- jQuery UI -->
-	<script src="/js/plugins/jquery-ui/jquery-ui.js"></script>
+	<script src="/assets/flat/js/plugins/jquery-ui/jquery-ui.js"></script>
 	<!-- slimScroll -->
-	<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="/assets/flat/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 	<!-- Bootstrap -->
-	<script src="/js/bootstrap.min.js"></script>
+	<script src="/assets/flat/js/bootstrap.min.js"></script>
 	<!-- Bootbox -->
-	<script src="/js/plugins/bootbox/jquery.bootbox.js"></script>
+	<script src="/assets/flat/js/plugins/bootbox/jquery.bootbox.js"></script>
 	<!-- New DataTables -->
-	<script src="/js/plugins/moment/js/jquery.moment.min.js"></script>
-	<script src="/js/plugins/moment/js/moment-range.min.js"></script>
-	<script src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
-	<script src="/js/plugins/datatables/extensions/dataTables.tableTools.min.js"></script>
-	<script src="/js/plugins/datatables/extensions/dataTables.colReorder.min.js"></script>
-	<script src="/js/plugins/datatables/extensions/dataTables.colVis.min.js"></script>
-	<script src="/js/plugins/datatables/extensions/dataTables.scroller.min.js"></script>
+	<script src="/assets/flat/js/plugins/momentjs/jquery.moment.min.js"></script>
+	<script src="/assets/flat/js/plugins/momentjs/moment-range.min.js"></script>
+	<script src="/assets/flat/js/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="/assets/flat/js/plugins/datatables/extensions/dataTables.tableTools.min.js"></script>
+	<script src="/assets/flat/js/plugins/datatables/extensions/dataTables.colReorder.min.js"></script>
+	<script src="/assets/flat/js/plugins/datatables/extensions/dataTables.colVis.min.js"></script>
+	<script src="/assets/flat/js/plugins/datatables/extensions/dataTables.scroller.min.js"></script>
 
 	<!-- Chosen -->
-	<script src="/js/plugins/chosen/chosen.jquery.min.js"></script>
+	<script src="/assets/flat/js/plugins/chosen/chosen.jquery.min.js"></script>
 
 	<!-- Theme framework -->
-	<script src="/js/eakroko.min.js"></script>
+	<script src="/assets/flat/js/eakroko.min.js"></script>
 	<!-- Theme scripts -->
-	<script src="/js/application.min.js"></script>
+	<script src="/assets/flat/js/application.min.js"></script>
 	<!-- Just for demonstration -->
-	<script src="/js/demonstration.min.js"></script>
+	<script src="/assets/flat/js/demonstration.min.js"></script>
 
 	<!--[if lte IE 9]>
-	<script src="/js/plugins/placeholder/jquery.placeholder.min.js"></script>
+	<script src="/assets/flat/js/plugins/placeholder/jquery.placeholder.min.js"></script>
 	<script>
 		$(document).ready(function () {
 			$('input, textarea').placeholder();
@@ -68,9 +68,9 @@
 	<![endif]-->
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="/img/favicon.ico" />
+	<link rel="shortcut icon" href="/assets/flat/img/favicon.ico" />
 	<!-- Apple devices Homescreen icon -->
-	<link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" href="/assets/flat/img/apple-touch-icon-precomposed.png" />
 
 </head>
 
@@ -260,7 +260,7 @@
 <div class="container-fluid">
 <div class="page-header">
 	<div class="pull-left">
-		<h1>Tiendas</h1>
+		<h1><?php echo ucwords($response['pagina']['subtitulo'])?></h1>
 	</div>
 	<div class="pull-right">
 		<ul class="minitiles">
@@ -269,19 +269,23 @@
 					<i class="fa fa-cogs"></i>
 				</a>
 			</li>
-			<li class='lightgrey'>
-				<a href="#">
-					<i class="fa fa-globe"></i>
-				</a>
-			</li>
+			
 		</ul>
 		<ul class="stats">
 			<li class='satgreen'>
 				<i class="fa fa-money"></i>
 
 				<div class="details">
-					<span class="big">$324,12</span>
-					<span>Balance</span>
+					<span class="big">3,120</span>
+					<span>Productos</span>
+				</div>
+			</li>
+			<li class='lightred'>
+				<i class="fa fa-money"></i>
+
+				<div class="details">
+					<span class="big">120</span>
+					<span>Sin Stock </span>
 				</div>
 			</li>
 			<li class='lightred'>
@@ -306,7 +310,7 @@
 			<i class="fa fa-angle-right"></i>
 		</li>
 		<li>
-			<a href="tables-advanced.html">Tiendas</a>
+			<a href="tables-advanced.html">Poductos</a>
 		</li>
 	</ul>
 	<div class="close-bread">
@@ -321,7 +325,7 @@
 			<div class="box-title">
 				<h3>
 					<i class="fa fa-table"></i>
-					Tiendas
+					<?php echo ucwords($response['pagina']['tbltitulo'])?>
 				</h3>
 			</div>
 
@@ -331,9 +335,9 @@
                                         <thead>
 					<tr>
 						<th>Id</th>
-						<th>Tienda</th>
-						<th>Host</th>
-						<th>Representante</th>
+						<th>Producto</th>
+						<th>Codigo de Barras</th>
+						<th>Proveedor</th>
 						<th class='hidden-350'>Vence</th>
 						
 					</tr>
