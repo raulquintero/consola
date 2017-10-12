@@ -65,7 +65,7 @@
 
 </head>
 
-<body data-layout="<?php echo $layout?>" class="theme-red<?php echo $themee ?>">
+<body data-layout="<?php if(isset($layout)) echo $layout?>" class="theme-red<?php echo $theme ?>">
 
 
 <?php include DIR_TEMPLATES.'navigation.php';?>

@@ -71,6 +71,7 @@ class LoginController {
 		
 		self::$settings['nombre'] = $models[0]['nombre'];
 		self::$settings['key'] = $key;
+		if(isset($models[0]['error']))
 		self::$settings['error'] = $models[0]['error'];
 		
 	

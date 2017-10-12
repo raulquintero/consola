@@ -91,13 +91,13 @@ body {
         <div class="form-group">
           <div class="email controls" >
    <?php
-        if ($response['error']){
+        if (isset($response['error'])){
 			echo '<span class="label label-danger">'.$_SESSION['error'].'</span>';
           	
   		}
     ?>    
 	 <?php
-        if ($_SESSION['error']){
+        if (isset($_SESSION['error'])){
           	echo '<div class="alert alert-warning alert-dismissable" style="border:1px solid red">';
 				echo "<font color=red>Error: ".strtoupper($_SESSION['error'])."</font><br>"; unset($_SESSION['error']); 
   			echo '</div>';

@@ -4,7 +4,7 @@
         <div class="form-group">
           	<div class="password controls" >
 				<?php
-					if ($_SESSION['error']){
+					if (isset($_SESSION['error'])){
 						echo '<div class="alert alert-warning alert-dismissable" style="border:1px solid red">';
 						echo "<font color=red>Error: ".strtoupper($_SESSION['error'])."</font><br>"; unset($_SESSION['error']); 
 						echo '</div>';

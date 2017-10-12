@@ -19,15 +19,16 @@ class Router{
 		$palabra = NULL;
 		$flag = TRUE;
 		$variables_temp = NULL;
-	// var_dump($route);
+	//  var_dump($_GET['q']);
 
 		
 		switch ($method) {
 
 			// case 'get': if (!empty($_GET)) $request = "/".$_GET['q']; break;
 			// case 'post':if (!empty($_POST))	$request = "/".$_POST['q']; break;
-			case 'get': $r_temp=$request = "/".$_GET['q']; break;
-			case 'post':$r_temp=$request = "/".$_POST['q']; break;
+			// si es nulo se asigna la raiz por default
+			case 'get': if(isset($_GET['q']))  $r_temp=$request = "/".$_GET['q'];else $r_temp=$request = "/";  break;
+			case 'post':if(isset($_GET['q']))  $r_temp=$request = "/".$_POST['q'];else $r_temp=$request ="/"; break;
 			
 		};
 
@@ -45,6 +46,7 @@ class Router{
 // echo "variable_temp: ";var_dump($variables_temp);echo "<br>";
 // echo "compare:";var_dump(strcmp($request,$route));echo " -- fin compare<br>";
 		
+
 		if (strcmp($request,$route)==0) {
 			// var_dump($_COOKIE['lastpage']);echo "<br>:AUIIIII";exit;
 			if ((strcmp($request,'/lock')<>0) && (strcmp($request,'/unlock')<>0) && (strcmp($request,'/locked')<>0)) {
